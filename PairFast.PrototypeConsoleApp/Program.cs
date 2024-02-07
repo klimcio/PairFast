@@ -33,10 +33,8 @@ internal static class Extensions
         throw new NotImplementedException();
     }
 
-    public static IDictionary<string, int> InterpretResults(this IEnumerable<PairCompared> pairs)
-    {
-        throw new NotImplementedException();
-    }
+    public static IDictionary<string, int> InterpretResults(this IEnumerable<PairCompared> pairs) 
+        => PairFastLogic.InterpretResults(pairs);
 
     public static void ViewResults(this IDictionary<string, int> pairs)
     {
