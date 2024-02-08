@@ -5,7 +5,11 @@ VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PairFast.PrototypeConsoleApp", "PairFast.PrototypeConsoleApp\PairFast.PrototypeConsoleApp.csproj", "{C047AB4E-7A18-42A0-8309-4234610564B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PairFast.Logic", "PairFast.Logic\PairFast.Logic.csproj", "{DBFE9D19-FEBD-4E8C-8D06-05215001F25F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PairFast.Logic", "PairFast.Logic\PairFast.Logic.csproj", "{DBFE9D19-FEBD-4E8C-8D06-05215001F25F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7739BCFC-BA8C-4826-9518-EEC71BA7FBBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PairFast.Logic.Tests", "PairFast.Logic.Tests\PairFast.Logic.Tests.csproj", "{2AB18C98-C43D-41C0-81E6-AEB31B3CD154}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +25,16 @@ Global
 		{DBFE9D19-FEBD-4E8C-8D06-05215001F25F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBFE9D19-FEBD-4E8C-8D06-05215001F25F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBFE9D19-FEBD-4E8C-8D06-05215001F25F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AB18C98-C43D-41C0-81E6-AEB31B3CD154}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AB18C98-C43D-41C0-81E6-AEB31B3CD154}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AB18C98-C43D-41C0-81E6-AEB31B3CD154}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AB18C98-C43D-41C0-81E6-AEB31B3CD154}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2AB18C98-C43D-41C0-81E6-AEB31B3CD154} = {7739BCFC-BA8C-4826-9518-EEC71BA7FBBB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {109F02B0-6530-47F4-A50F-B9773964E56C}
