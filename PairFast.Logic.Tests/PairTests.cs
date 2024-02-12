@@ -10,6 +10,8 @@ public class PairTests
 
         pair!.Equals(Pair.New("apples", "oranges")).Should().BeTrue();
         pair!.Equals(Pair.New("oranges", "apples")).Should().BeTrue();
+
+        pair!.Equals(Pair.New("oranges", "pineapples")).Should().BeFalse(because: "checking whether custom Equals work");
     }
 
     [Test]

@@ -2,9 +2,22 @@
 
 public static class PairFastLogic
 {
-    public static IDictionary<string, int> InterpretResults(IEnumerable<PairCompared> pairs)
+    public static IDictionary<string, int> InterpretResults(IEnumerable<PairCompared> comparisons)
     {
-        throw new NotImplementedException();
+        Dictionary<string, int> results = new();
+        var items = comparisons.Select(x => x.Left).Union(comparisons.Select(x => x.Right)).Distinct();
+
+        foreach(var item in items)
+        {
+            var ofInterest = comparisons
+                .Select(x => x.DidItemWon(item))
+                .Where(x => x != null)
+                .Count(x => x!.Value);
+
+            results.Add(item, ofInterest);
+        }
+
+        return results;
     }
 
     public static IEnumerable<Pair> PairItems(IEnumerable<string> items)
@@ -29,9 +42,4 @@ public static class PairFastLogic
 
         return result;
     }
-}
-
-public class PairCompared
-{
-
 }

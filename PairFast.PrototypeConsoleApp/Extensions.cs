@@ -34,7 +34,21 @@ internal static class Extensions
 
     public static IEnumerable<PairCompared> CompareItems(this IEnumerable<Pair> pairs)
     {
-        throw new NotImplementedException();
+        List<PairCompared> compared = new();
+        var template = "{0} (0) vs {1} (1) : ";
+
+        foreach (var pair in pairs)
+        {
+            Console.Write(template, pair.Left, pair.Right);
+            var comparison = Console.ReadLine();
+
+            if (comparison == "0") 
+                compared.Add(new PairCompared(pair.Left, pair.Right, true));
+            else
+                compared.Add(new PairCompared(pair.Left, pair.Right, false));
+        }
+
+        return compared;
     }
 
     public static IDictionary<string, int> InterpretResults(this IEnumerable<PairCompared> pairs) 
@@ -42,7 +56,10 @@ internal static class Extensions
 
     public static void ViewResults(this IDictionary<string, int> pairs)
     {
-        throw new NotImplementedException();
+        Console.WriteLine();
+        foreach(var pair in pairs.OrderByDescending(x => x.Value))
+        {
+            Console.WriteLine($"{pair.Key} ({pair.Value})");
+        }
     }
-
 }
