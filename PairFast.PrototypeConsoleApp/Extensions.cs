@@ -30,7 +30,7 @@ internal static class Extensions
     }
 
     public static IEnumerable<Pair> PairItems(this IEnumerable<string> items) 
-        => PairFastLogic.PairItems(items);
+        => PairingFunctions.PairItems(items);
 
     public static IEnumerable<PairCompared> CompareItems(this IEnumerable<Pair> pairs)
     {
@@ -41,25 +41,20 @@ internal static class Extensions
         {
             Console.Write(template, pair.Left, pair.Right);
             var comparison = Console.ReadLine();
-
-            if (comparison == "0") 
-                compared.Add(new PairCompared(pair.Left, pair.Right, true));
-            else
-                compared.Add(new PairCompared(pair.Left, pair.Right, false));
+            
+            compared.Add(new PairCompared(pair.Left, pair.Right, comparison == "0"));
         }
 
         return compared;
     }
 
-    public static IDictionary<string, int> InterpretResults(this IEnumerable<PairCompared> pairs) 
-        => PairFastLogic.InterpretResults(pairs);
+    public static PairComparisonResults InterpretResults(this IEnumerable<PairCompared> pairs) 
+        => InterpretingResultsFunctions.InterpretResults(pairs);
 
-    public static void ViewResults(this IDictionary<string, int> pairs)
+    public static void ViewResults(this PairComparisonResults pairs)
     {
         Console.WriteLine();
-        foreach(var pair in pairs.OrderByDescending(x => x.Value))
-        {
-            Console.WriteLine($"{pair.Key} ({pair.Value})");
-        }
+        foreach(var pair in pairs.Ranking)
+            Console.WriteLine(pair.ToString());
     }
 }

@@ -13,7 +13,7 @@ public class PairingTests
             "apples", "oranges", "plums"
         };
 
-        pairs = PairFastLogic.PairItems(list);
+        pairs = PairingFunctions.PairItems(list);
     }
 
     [Test]
